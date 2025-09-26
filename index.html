@@ -15,9 +15,33 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #fdfaf9;
-      color: #333;
-      line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
+      color: #fff; /* textos blancos para resaltar sobre overlay */
+    }
+
+    /* Imagen de fondo con overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('fondo.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); /* overlay semitransparente */
+      z-index: -1;
     }
 
     header {
@@ -59,7 +83,7 @@
 
     h2 {
       text-align: center;
-      color: #c9184a;
+      color: #ffccd5; /* títulos visibles sobre overlay */
       font-size: 2rem;
       margin-bottom: 2rem;
       position: relative;
@@ -70,7 +94,7 @@
       display: block;
       width: 60px;
       height: 4px;
-      background: #c9184a;
+      background: #ffccd5;
       margin: 0.5rem auto 0;
       border-radius: 2px;
     }
@@ -84,13 +108,14 @@
     }
 
     ul li {
-      background: #ffe5ec;
+      background: rgba(255, 229, 236, 0.85); /* semitransparente para ver fondo */
       padding: 1.5rem 1rem;
       border-radius: 12px;
       text-align: center;
       font-weight: 600;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
+      color: #590d22;
     }
 
     ul li:hover {
@@ -120,14 +145,15 @@
     /* Contacto */
     .contacto {
       text-align: center;
-      background: #ffccd5;
+      background: rgba(255, 204, 213, 0.85); /* semitransparente */
       padding: 3rem 1rem;
       border-radius: 12px;
       transition: background 0.3s ease;
+      color: #590d22;
     }
 
     .contacto:hover {
-      background: #ffbcd1;
+      background: rgba(255, 188, 209, 0.85);
     }
 
     .contacto p {
@@ -214,3 +240,5 @@
 
 </body>
 </html>
+
+
